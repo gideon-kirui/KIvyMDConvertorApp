@@ -17,7 +17,7 @@ class ConvertorApp(MDApp):
 
     def snackbar_tanks(self):
         self.snackbar = Snackbar(
-            text="[color=#000000] Thanks for your feedback",
+            text="[color=#000000] Thanks for your feedback ",
             bg_color=(1, 1, 1, 1),
             snackbar_animation_dir="Top",
             font_size='16sp',
