@@ -47,7 +47,7 @@ class ConvertorApp(MDApp):
 
     def get_data5(self):
         value_for_con = self.root.ids.data5.text
-        con_sec = int(value_for_con)/100
+        con_sec = int(value_for_con) * 274.15
         self.root.ids.output5.text = str(con_sec) + '  ' + 'Kelvin'
 
     def get_data6(self):
