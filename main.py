@@ -71,7 +71,7 @@ ScreenManager:
                                 text: 'USD to KES'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 11
+                                font_size: 16
                         
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -98,7 +98,7 @@ ScreenManager:
                                 text: 'Meter to Kilometer'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 11
+                                font_size: 16
 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -125,7 +125,7 @@ ScreenManager:
                                 text: 'Grams to Kilograms'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 11
+                                font_size: 16
 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -152,7 +152,7 @@ ScreenManager:
                                 text: 'Seconds to minutes'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 11
+                                font_size: 16
 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -179,7 +179,7 @@ ScreenManager:
                                 text: 'Celsius to Kelvin'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 11
+                                font_size: 16
 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -206,7 +206,7 @@ ScreenManager:
                                 text: 'Jouls to Watts'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 11
+                                font_size: 16
 
         MDNavigationDrawer:
             id: nav_ldrawer
@@ -260,7 +260,7 @@ ScreenManager:
                             md_bg_color: 0.9, 0.9, 0.9, 0.2
                             spacing: '5dp'
                             padding: '10dp'
-                            size_hint_y: None
+                            size_hint_y: 0.5
                             MDLabel:
                                 text: 'Gideon Kirui'
                                 color: 'black'
@@ -305,24 +305,22 @@ ScreenManager:
                         title: 'Currency (USD-KES)'
                         left_action_items: [["arrow-left", lambda x: app.Navigate_t0_homepage()]]
 
-
                     MDGridLayout:
                         cols: 1
                         padding:dp(20)
+                        spacing: dp(15)
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(5)
+                            padding:dp(5)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
-                                spacing: dp(5)
-                                size_hint_y: None
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y:.5
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
@@ -363,34 +361,26 @@ ScreenManager:
                                 line_color_focus: [1,1,1,1]
                                 hint_text_color_focus: [1,1,1,1]
 
-                        MDBoxLayout:
-                            orientation: 'vertical'
+                        MDRectangleFlatIconButton:
+                            text: 'Convert'
+                            icon: 'autorenew'
+                            pos_hint: {'center_x':0.5}
+                            color: 'white'
+                            size_hint_x: 0.5
                             size_hint_y: None
-                            padding:dp(15)
-                            MDRectangleFlatIconButton:
-                                text: 'Convert'
-                                icon: 'autorenew'
-                                pos_hint: {'center_x':0.5}
-                                color: 'white'
-                                size_hint_x: 0.5
-                                size_hint_y: None
-                                on_release: app.get_data1()
+                            on_release: app.get_data1()
                                 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(10)
+                            padding:dp(10)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
                                 spacing: dp(5)
-                                size_hint_y: None
-
+                                size_hint_y: .4
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
@@ -422,12 +412,13 @@ ScreenManager:
                                     font_size: 24
                                     color: "white"
 
-                            MDLabel:
-                                id: output1
-                                size_hint_x: 0.8
-                                halign: 'center'
-                                pos_hint: {'center_x':0.5}
-                                color: "orange"
+                                MDLabel:
+                                    id: output1
+                                    size_hint_x: 0.8
+                                    size_hint_x: 0.4
+                                    halign: 'center'
+                                    pos_hint: {'center_x':0.5}
+                                    color: "orange"
 
     MDScreen:
         name: 'distance'
@@ -445,21 +436,20 @@ ScreenManager:
 
                     MDGridLayout:
                         cols: 1
-                        padding:dp(10)
+                        padding:dp(20)
+                        spacing: dp(15)
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(5)
+                            padding:dp(5)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
-                                spacing: dp(5)
-                                size_hint_y: None
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y:.5
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
@@ -477,11 +467,10 @@ ScreenManager:
                                     halign: 'center'
                                     pos_hint: {'center_x':0.3}
                                     on_press: app.menu2.open()
-                                    
 
                                 MDLabel:
                                     id: unit_dis2
-                                    text: 'Meters'
+                                    text: 'Meter'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
                                     size_hint_y: None
@@ -494,41 +483,33 @@ ScreenManager:
                                 id: data2
                                 size_hint_x: 0.4
                                 halign: 'center'
+                                helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
                                 line_color_normal: [1,1,1,1]
                                 hint_text_color_normal: [1,1,1,1]
                                 line_color_focus: [1,1,1,1]
                                 hint_text_color_focus: [1,1,1,1]
-                                helper_text_mode: "persistent"
-                                
-                        MDBoxLayout:
-                            orientation: 'vertical'
+
+                        MDRectangleFlatIconButton:
+                            text: 'Convert'
+                            icon: 'autorenew'
+                            pos_hint: {'center_x':0.5}
+                            color: 'white'
+                            size_hint_x: 0.5
                             size_hint_y: None
-                            padding:dp(15)
-                            MDRectangleFlatIconButton:
-                                text: 'Convert'
-                                icon: 'autorenew'
-                                pos_hint: {'center_x':0.5}
-                                color: 'white'
-                                size_hint_x: 0.5
-                                size_hint_y: None
-                                on_release: app.get_data2()
+                            on_release: app.get_data2()
                                 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(10)
+                            padding:dp(10)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
                                 spacing: dp(5)
-                                size_hint_y: None
-
+                                size_hint_y: .4
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
@@ -560,12 +541,13 @@ ScreenManager:
                                     font_size: 24
                                     color: "white"
 
-                            MDLabel:
-                                id: output2
-                                size_hint_x: 0.8
-                                halign: 'center'
-                                pos_hint: {'center_x':0.5}
-                                color: "orange"
+                                MDLabel:
+                                    id: output2
+                                    size_hint_x: 0.8
+                                    size_hint_x: 0.4
+                                    halign: 'center'
+                                    pos_hint: {'center_x':0.5}
+                                    color: "orange"
 
 
 
@@ -586,20 +568,19 @@ ScreenManager:
                     MDGridLayout:
                         cols: 1
                         padding:dp(20)
+                        spacing: dp(15)
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(5)
+                            padding:dp(5)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
-                                spacing: dp(5)
-                                size_hint_y: None
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y:.5
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
@@ -620,7 +601,7 @@ ScreenManager:
 
                                 MDLabel:
                                     id: unit_dis3
-                                    text: 'Gram'
+                                    text: 'USD'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
                                     size_hint_y: None
@@ -633,41 +614,33 @@ ScreenManager:
                                 id: data3
                                 size_hint_x: 0.4
                                 halign: 'center'
+                                helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
                                 line_color_normal: [1,1,1,1]
                                 hint_text_color_normal: [1,1,1,1]
                                 line_color_focus: [1,1,1,1]
                                 hint_text_color_focus: [1,1,1,1]
-                                helper_text_mode: "persistent"
 
-                        MDBoxLayout:
-                            orientation: 'vertical'
+                        MDRectangleFlatIconButton:
+                            text: 'Convert'
+                            icon: 'autorenew'
+                            pos_hint: {'center_x':0.5}
+                            color: 'white'
+                            size_hint_x: 0.5
                             size_hint_y: None
-                            padding:dp(15)
-                            MDRectangleFlatIconButton:
-                                text: 'Convert'
-                                icon: 'autorenew'
-                                pos_hint: {'center_x':0.5}
-                                color: 'white'
-                                size_hint_x: 0.5
-                                size_hint_y: None
-                                on_release: app.get_data3()
+                            on_release: app.get_data3()
                                 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(10)
+                            padding:dp(10)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
                                 spacing: dp(5)
-                                size_hint_y: None
-
+                                size_hint_y: .4
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
@@ -689,8 +662,8 @@ ScreenManager:
                                     on_press: app.menu_c3.open()
 
                                 MDLabel:
-                                    id: unit_dis_c3
-                                    text: 'Kilograms'
+                                    id: unit_dis_c
+                                    text: 'Kilogram'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
                                     size_hint_y: None
@@ -699,12 +672,13 @@ ScreenManager:
                                     font_size: 24
                                     color: "white"
 
-                            MDLabel:
-                                id: output3
-                                size_hint_x: 0.8
-                                halign: 'center'
-                                pos_hint: {'center_x':0.5}
-                                color: "orange"
+                                MDLabel:
+                                    id: output3
+                                    size_hint_x: 0.8
+                                    size_hint_x: 0.4
+                                    halign: 'center'
+                                    pos_hint: {'center_x':0.5}
+                                    color: "orange"
 
     MDScreen:
         name: 'time'
@@ -723,20 +697,19 @@ ScreenManager:
                     MDGridLayout:
                         cols: 1
                         padding:dp(20)
+                        spacing: dp(15)
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(5)
+                            padding:dp(5)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
-                                spacing: dp(5)
-                                size_hint_y: None
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y:.5
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
@@ -770,41 +743,33 @@ ScreenManager:
                                 id: data4
                                 size_hint_x: 0.4
                                 halign: 'center'
+                                helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
                                 line_color_normal: [1,1,1,1]
                                 hint_text_color_normal: [1,1,1,1]
                                 line_color_focus: [1,1,1,1]
                                 hint_text_color_focus: [1,1,1,1]
-                                helper_text_mode: "persistent"
 
-                        MDBoxLayout:
-                            orientation: 'vertical'
+                        MDRectangleFlatIconButton:
+                            text: 'Convert'
+                            icon: 'autorenew'
+                            pos_hint: {'center_x':0.5}
+                            color: 'white'
+                            size_hint_x: 0.5
                             size_hint_y: None
-                            padding:dp(15)
-                            MDRectangleFlatIconButton:
-                                text: 'Convert'
-                                icon: 'autorenew'
-                                pos_hint: {'center_x':0.5}
-                                color: 'white'
-                                size_hint_x: 0.5
-                                size_hint_y: None
-                                on_release: app.get_data4()
+                            on_release: app.get_data4()
                                 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(10)
+                            padding:dp(10)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
                                 spacing: dp(5)
-                                size_hint_y: None
-
+                                size_hint_y: .4
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
@@ -836,12 +801,13 @@ ScreenManager:
                                     font_size: 24
                                     color: "white"
 
-                            MDLabel:
-                                id: output4
-                                size_hint_x: 0.8
-                                halign: 'center'
-                                pos_hint: {'center_x':0.5}
-                                color: "orange"
+                                MDLabel:
+                                    id: output4
+                                    size_hint_x: 0.8
+                                    size_hint_x: 0.4
+                                    halign: 'center'
+                                    pos_hint: {'center_x':0.5}
+                                    color: "orange"
                                 
 
 
@@ -862,20 +828,19 @@ ScreenManager:
                     MDGridLayout:
                         cols: 1
                         padding:dp(20)
+                        spacing: dp(15)
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(5)
+                            padding:dp(5)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
-                                spacing: dp(5)
-                                size_hint_y: None
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y:.5
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
@@ -896,7 +861,7 @@ ScreenManager:
 
                                 MDLabel:
                                     id: unit_dis5
-                                    text: 'Cesius'
+                                    text: 'Celsius'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
                                     size_hint_y: None
@@ -909,41 +874,33 @@ ScreenManager:
                                 id: data5
                                 size_hint_x: 0.4
                                 halign: 'center'
+                                helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
                                 line_color_normal: [1,1,1,1]
                                 hint_text_color_normal: [1,1,1,1]
                                 line_color_focus: [1,1,1,1]
                                 hint_text_color_focus: [1,1,1,1]
-                                helper_text_mode: "persistent"
 
-                        MDBoxLayout:
-                            orientation: 'vertical'
+                        MDRectangleFlatIconButton:
+                            text: 'Convert'
+                            icon: 'autorenew'
+                            pos_hint: {'center_x':0.5}
+                            color: 'white'
+                            size_hint_x: 0.5
                             size_hint_y: None
-                            padding:dp(15)
-                            MDRectangleFlatIconButton:
-                                text: 'Convert'
-                                icon: 'autorenew'
-                                pos_hint: {'center_x':0.5}
-                                color: 'white'
-                                size_hint_x: 0.5
-                                size_hint_y: None
-                                on_release: app.get_data5()
+                            on_release: app.get_data5()
                                 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(10)
+                            padding:dp(10)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
                                 spacing: dp(5)
-                                size_hint_y: None
-
+                                size_hint_y: .4
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
@@ -975,12 +932,13 @@ ScreenManager:
                                     font_size: 24
                                     color: "white"
 
-                            MDLabel:
-                                id: output5
-                                size_hint_x: 0.8
-                                halign: 'center'
-                                pos_hint: {'center_x':0.5}
-                                color: "orange"
+                                MDLabel:
+                                    id: output5
+                                    size_hint_x: 0.8
+                                    size_hint_x: 0.4
+                                    halign: 'center'
+                                    pos_hint: {'center_x':0.5}
+                                    color: "orange"
 
     MDScreen:
         name: 'energy'
@@ -999,20 +957,19 @@ ScreenManager:
                     MDGridLayout:
                         cols: 1
                         padding:dp(20)
+                        spacing: dp(15)
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(5)
+                            padding:dp(5)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
-                                spacing: dp(5)
-                                size_hint_y: None
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y:.5
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
@@ -1033,7 +990,7 @@ ScreenManager:
 
                                 MDLabel:
                                     id: unit_dis6
-                                    text: 'Jouls'
+                                    text: 'Juols'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
                                     size_hint_y: None
@@ -1046,41 +1003,33 @@ ScreenManager:
                                 id: data6
                                 size_hint_x: 0.4
                                 halign: 'center'
+                                helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
                                 line_color_normal: [1,1,1,1]
                                 hint_text_color_normal: [1,1,1,1]
                                 line_color_focus: [1,1,1,1]
                                 hint_text_color_focus: [1,1,1,1]
-                                helper_text_mode: "persistent"
 
-                        MDBoxLayout:
-                            orientation: 'vertical'
+                        MDRectangleFlatIconButton:
+                            text: 'Convert'
+                            icon: 'autorenew'
+                            pos_hint: {'center_x':0.5}
+                            color: 'white'
+                            size_hint_x: 0.5
                             size_hint_y: None
-                            padding:dp(15)
-                            MDRectangleFlatIconButton:
-                                text: 'Convert'
-                                icon: 'autorenew'
-                                pos_hint: {'center_x':0.5}
-                                color: 'white'
-                                size_hint_x: 0.5
-                                size_hint_y: None
-                                on_release: app.get_data6()
+                            on_release: app.get_data6()
                                 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0.1
-                            size_hint: 0.98, 0.5
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
-
+                            spacing:dp(10)
+                            padding:dp(10)
                             MDGridLayout:
                                 cols: 1
-                                padding: dp(10)
                                 spacing: dp(5)
-                                size_hint_y: None
-
+                                size_hint_y: .4
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
@@ -1112,12 +1061,13 @@ ScreenManager:
                                     font_size: 24
                                     color: "white"
 
-                            MDLabel:
-                                id: output6
-                                size_hint_x: 0.8
-                                halign: 'center'
-                                pos_hint: {'center_x':0.5}
-                                color: "orange"
+                                MDLabel:
+                                    id: output6
+                                    size_hint_x: 0.8
+                                    size_hint_x: 0.4
+                                    halign: 'center'
+                                    pos_hint: {'center_x':0.5}
+                                    color: "orange"
     MDScreen:
         name: 'feedback'
         md_bg_color: 83/255, 31/255, 147/255, 1
@@ -1142,7 +1092,7 @@ ScreenManager:
                         padding:dp(7)
                         valign: 'center'
                         MDCard:
-                            md_bg_color: 0.9, 0.9, 0.9, 0.3
+                            md_bg_color: 0.9, 0.9, 0.9, 0
                             size_hint: 0.98, None
                             orientation: 'vertical'
                             height: self.minimum_size[1]
@@ -1176,13 +1126,13 @@ ScreenManager:
 
                         MDBoxLayout:
                             orientation: 'vertical'
-                            spacing: dp(10)
+                            spacing: dp(30)
+                            padding: dp(10)
                             MDTextField:
                                 hint_text: "Write Feedback"
-                                size_hint_x: 0.7
+                                size_hint_x: 0.98
                                 pos_hint: {'center_x':0.5}
                                 multiline: True
-                                size_hint_y: 0.6
                                 line_color_normal: [1,1,1,1]
                                 hint_text_color_normal: [1,1,1,1]
                                 line_color_focus: [1,1,1,1]
@@ -1195,10 +1145,10 @@ ScreenManager:
                             MDRectangleFlatButton:
                                 text: 'Submit Feedback'
                                 icon: 'message'
-                                pos_hint: {'center_x':0.5, 'center_y':0.2}
+                                pos_hint: {'center_x':0.5}
                                 color: 'white'
                                 on_release: app.snackbar_tanks()
-                                size_hint_x: 0.5
+                                size_hint_x: 0.7
                 
 """
 
@@ -1626,14 +1576,14 @@ class ConvertorApp(MDApp):
     def get_data6(self):
         try: 
             value_for_con = int(self.root.ids.data6.text)
-            con_sec = int(value_for_con)/1000
-            self.root.ids.output6.text = str(con_sec) + '  ' + 'Watts'
+            con_sec = int(value_for_con)*1000
+            self.root.ids.output6.text = str(con_sec) + '  ' + 'Kilojuols'
             self.root.ids.data6.helper_text = ''
         except ValueError:
             try:
                 value_for_con = float(self.root.ids.data6.text)
-                con_sec = int(value_for_con)/1000
-                self.root.ids.output6.text = str(con_sec) + '  ' + 'Watts'
+                con_sec = int(value_for_con)*1000
+                self.root.ids.output6.text = str(con_sec) + '  ' + 'Kilojuols'
                 self.root.ids.data6.helper_text = ''
             except ValueError:
                 self.root.ids.data6.helper_text = 'Enter Number please'
