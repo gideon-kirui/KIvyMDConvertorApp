@@ -3,9 +3,6 @@ from kivy.lang.builder import Builder
 from kivymd.uix.snackbar import Snackbar
 from kivymd.toast import toast
 from kivymd.uix.menu import MDDropdownMenu
-from kivy.core.window import Window
-
-Window.size = (330, 580)
 
 screen_helper="""
 ScreenManager:
@@ -71,7 +68,7 @@ ScreenManager:
                                 text: 'USD to KES'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 16
+                                font_style:"Body2"
                         
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -98,7 +95,7 @@ ScreenManager:
                                 text: 'Meter to Kilometer'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 16
+                                font_style:"Body2"
 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -125,7 +122,7 @@ ScreenManager:
                                 text: 'Grams to Kilograms'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 16
+                                font_style:"Body2"
 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -152,7 +149,7 @@ ScreenManager:
                                 text: 'Seconds to minutes'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 16
+                                font_style:"Body2"
 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -179,7 +176,7 @@ ScreenManager:
                                 text: 'Celsius to Kelvin'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 16
+                                font_style:"Body2"
 
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, .3
@@ -206,7 +203,7 @@ ScreenManager:
                                 text: 'Jouls to Watts'
                                 halign:"center" 
                                 color: "blue"
-                                font_size: 16
+                                font_style:"Body2"
 
         MDNavigationDrawer:
             id: nav_ldrawer
@@ -249,18 +246,31 @@ ScreenManager:
 
             MDBoxLayout:
                 ScrollView:
-                    MDBoxLayout:
+                    MDCard:
+                        md_bg_color: 0.9, 0.9, 0.9, 0.1
                         orientation: 'vertical'
                         padding:dp(10)
+                        spacing:dp(5)
+                        MDLabel:
+                            text: 'Developed By'
+                            color: 'orange'
+                            font_style: 'H4'
+                            height: self.texture_size[1]
+                            size_hint_y: 0.1
+                            halign: 'center'
+
                         Image:
                             source: 'gidi.jpg'
+                            size_hint_y: 0.7
                             
                         MDCard:
                             orientation: 'vertical'
                             md_bg_color: 0.9, 0.9, 0.9, 0.2
                             spacing: '5dp'
-                            padding: '10dp'
-                            size_hint_y: 0.5
+                            size_hint_y: 0.3
+                            size_hint_x: .85
+                            pos_hint: {'center_x':0.5}
+                            
                             MDLabel:
                                 text: 'Gideon Kirui'
                                 color: 'black'
@@ -315,20 +325,20 @@ ScreenManager:
                             height: self.minimum_size[1]
                             radius: [20, ]
                             spacing:dp(5)
-                            padding:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
                                 padding: dp(5)
                                 spacing: dp(10)
-                                size_hint_y:.5
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -344,15 +354,15 @@ ScreenManager:
                                     text: 'USD'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                             MDTextField:
                                 id: data1
-                                size_hint_x: 0.4
+                                size_hint_x: 0.6
                                 halign: 'center'
                                 helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
@@ -375,22 +385,23 @@ ScreenManager:
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing:dp(10)
-                            padding:dp(10)
+                            spacing:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
-                                spacing: dp(5)
-                                size_hint_y: .4
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     size_hint_x: 0.8
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -406,16 +417,17 @@ ScreenManager:
                                     text: 'KES'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDLabel:
                                     id: output1
+                                    text: 'Answer Will Apear Here'
                                     size_hint_x: 0.8
-                                    size_hint_x: 0.4
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     color: "orange"
@@ -444,20 +456,20 @@ ScreenManager:
                             height: self.minimum_size[1]
                             radius: [20, ]
                             spacing:dp(5)
-                            padding:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
                                 padding: dp(5)
                                 spacing: dp(10)
-                                size_hint_y:.5
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -473,15 +485,15 @@ ScreenManager:
                                     text: 'Meter'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                             MDTextField:
                                 id: data2
-                                size_hint_x: 0.4
+                                size_hint_x: 0.6
                                 halign: 'center'
                                 helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
@@ -504,22 +516,23 @@ ScreenManager:
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing:dp(10)
-                            padding:dp(10)
+                            spacing:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
-                                spacing: dp(5)
-                                size_hint_y: .4
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     size_hint_x: 0.8
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -535,16 +548,17 @@ ScreenManager:
                                     text: 'Kilometer'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDLabel:
                                     id: output2
+                                    text: 'Answer Will Apear Here'
                                     size_hint_x: 0.8
-                                    size_hint_x: 0.4
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     color: "orange"
@@ -575,20 +589,20 @@ ScreenManager:
                             height: self.minimum_size[1]
                             radius: [20, ]
                             spacing:dp(5)
-                            padding:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
                                 padding: dp(5)
                                 spacing: dp(10)
-                                size_hint_y:.5
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -601,18 +615,18 @@ ScreenManager:
 
                                 MDLabel:
                                     id: unit_dis3
-                                    text: 'USD'
+                                    text: 'Gram'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                             MDTextField:
                                 id: data3
-                                size_hint_x: 0.4
+                                size_hint_x: 0.6
                                 halign: 'center'
                                 helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
@@ -635,22 +649,23 @@ ScreenManager:
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing:dp(10)
-                            padding:dp(10)
+                            spacing:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
-                                spacing: dp(5)
-                                size_hint_y: .4
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     size_hint_x: 0.8
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -662,20 +677,21 @@ ScreenManager:
                                     on_press: app.menu_c3.open()
 
                                 MDLabel:
-                                    id: unit_dis_c
+                                    id: unit_dis_c3
                                     text: 'Kilogram'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDLabel:
                                     id: output3
+                                    text: 'Answer Will Apear Here'
                                     size_hint_x: 0.8
-                                    size_hint_x: 0.4
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     color: "orange"
@@ -704,20 +720,20 @@ ScreenManager:
                             height: self.minimum_size[1]
                             radius: [20, ]
                             spacing:dp(5)
-                            padding:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
                                 padding: dp(5)
                                 spacing: dp(10)
-                                size_hint_y:.5
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -733,15 +749,15 @@ ScreenManager:
                                     text: 'Second'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                             MDTextField:
                                 id: data4
-                                size_hint_x: 0.4
+                                size_hint_x: 0.6
                                 halign: 'center'
                                 helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
@@ -764,22 +780,23 @@ ScreenManager:
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing:dp(10)
-                            padding:dp(10)
+                            spacing:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
-                                spacing: dp(5)
-                                size_hint_y: .4
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     size_hint_x: 0.8
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -795,16 +812,17 @@ ScreenManager:
                                     text: 'Minute'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDLabel:
                                     id: output4
+                                    text: 'Answer Will Apear Here'
                                     size_hint_x: 0.8
-                                    size_hint_x: 0.4
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     color: "orange"
@@ -835,20 +853,20 @@ ScreenManager:
                             height: self.minimum_size[1]
                             radius: [20, ]
                             spacing:dp(5)
-                            padding:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
                                 padding: dp(5)
                                 spacing: dp(10)
-                                size_hint_y:.5
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -864,15 +882,15 @@ ScreenManager:
                                     text: 'Celsius'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                             MDTextField:
                                 id: data5
-                                size_hint_x: 0.4
+                                size_hint_x: 0.6
                                 halign: 'center'
                                 helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
@@ -895,22 +913,23 @@ ScreenManager:
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing:dp(10)
-                            padding:dp(10)
+                            spacing:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
-                                spacing: dp(5)
-                                size_hint_y: .4
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     size_hint_x: 0.8
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -926,16 +945,17 @@ ScreenManager:
                                     text: 'Kelvin'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDLabel:
                                     id: output5
+                                    text: 'Answer Will Apear Here'
                                     size_hint_x: 0.8
-                                    size_hint_x: 0.4
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     color: "orange"
@@ -964,20 +984,20 @@ ScreenManager:
                             height: self.minimum_size[1]
                             radius: [20, ]
                             spacing:dp(5)
-                            padding:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
                                 padding: dp(5)
                                 spacing: dp(10)
-                                size_hint_y:.5
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "From"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -993,15 +1013,15 @@ ScreenManager:
                                     text: 'Juols'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.4
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                             MDTextField:
                                 id: data6
-                                size_hint_x: 0.4
+                                size_hint_x: 0.6
                                 halign: 'center'
                                 helper_text_mode: "persistent"
                                 pos_hint: {'center_x':0.5}
@@ -1024,22 +1044,23 @@ ScreenManager:
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing:dp(10)
-                            padding:dp(10)
+                            spacing:dp(5)
+                            padding:dp(15)
                             MDGridLayout:
                                 cols: 1
-                                spacing: dp(5)
-                                size_hint_y: .4
+                                padding: dp(5)
+                                spacing: dp(10)
+                                size_hint_y: 0.8
                                 MDLabel:
                                     text: "To"
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     size_hint_x: 0.8
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDRaisedButton:
@@ -1055,16 +1076,17 @@ ScreenManager:
                                     text: 'Kilojuols'
                                     height: self.texture_size[1]
                                     theme_text_color: 'Custom'
-                                    size_hint_y: None
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     bold: True
-                                    font_size: 24
+                                    font_style:"H6"
                                     color: "white"
 
                                 MDLabel:
                                     id: output6
+                                    text: 'Answer Will Apear Here'
                                     size_hint_x: 0.8
-                                    size_hint_x: 0.4
+                                    size_hint_y: 0.3
                                     halign: 'center'
                                     pos_hint: {'center_x':0.5}
                                     color: "orange"
@@ -1073,7 +1095,6 @@ ScreenManager:
         md_bg_color: 83/255, 31/255, 147/255, 1
         MDBoxLayout:
             orientation: "vertical"
-            padding:dp(25)
             MDBoxLayout:
                 orientation: 'vertical'
                 MDTopAppBar:
@@ -1089,16 +1110,14 @@ ScreenManager:
                         height: self.minimum_size[1]
                         radius: [20, ]
                         spacing: dp(5)
-                        padding:dp(7)
-                        valign: 'center'
+                        padding:dp(10)
                         MDCard:
                             md_bg_color: 0.9, 0.9, 0.9, 0
                             size_hint: 0.98, None
                             orientation: 'vertical'
                             height: self.minimum_size[1]
                             radius: [20, ]
-                            spacing: '5dp'
-                            padding: '10dp'
+                            spacing: dp(10)
                             valign: 'center'
                             MDTextField:
                                 hint_text: "Your Name"
@@ -1124,10 +1143,6 @@ ScreenManager:
                                 hint_text_color_focus: [1,1,1,1]
                                 icon_right_color_normal: [1,1,1,1]
 
-                        MDBoxLayout:
-                            orientation: 'vertical'
-                            spacing: dp(30)
-                            padding: dp(10)
                             MDTextField:
                                 hint_text: "Write Feedback"
                                 size_hint_x: 0.98
@@ -1140,8 +1155,11 @@ ScreenManager:
                                 mode: 'fill'
                                 fill_color_normal: [0.9,0.9,0.9, .1]
                                 fill_color_focus: [0.9,0.9,0.9, .2]
-                                
 
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            spacing: dp(30)
+                            size_hint_y: 0.5
                             MDRectangleFlatButton:
                                 text: 'Submit Feedback'
                                 icon: 'message'
@@ -1492,7 +1510,7 @@ class ConvertorApp(MDApp):
                 self.root.ids.data1.helper_text = ''
             except ValueError:
                 self.root.ids.data1.helper_text = 'Enter Number please'
-                self.root.ids.output1.text =  ''
+                self.root.ids.output1.text =  'Answer Will Apear Here'
                 self.root.ids.data1.text = ''
 
 ################## Distance Sectctor ########################
@@ -1511,7 +1529,7 @@ class ConvertorApp(MDApp):
                 self.root.ids.data2.helper_text = ''
             except ValueError:
                 self.root.ids.data2.helper_text = 'Enter Number please'
-                self.root.ids.output2.text =  ''
+                self.root.ids.output2.text =  'Answer Will Apear Here'
                 self.root.ids.data2.text = ''
 
 ################## Mass Sectctor ########################
@@ -1530,7 +1548,7 @@ class ConvertorApp(MDApp):
                 self.root.ids.data3.helper_text = ''
             except ValueError:
                 self.root.ids.data3.helper_text = 'Enter Number please'
-                self.root.ids.output3.text =  ''
+                self.root.ids.output3.text =  'Answer Will Apear Here'
                 self.root.ids.data3.text = ''
         
 ################## Time Sectctor ########################
@@ -1549,7 +1567,7 @@ class ConvertorApp(MDApp):
                 self.root.ids.data4.helper_text = ''
             except ValueError:
                 self.root.ids.data4.helper_text = 'Enter Number please'
-                self.root.ids.output4.text =  ''
+                self.root.ids.output4.text =  'Answer Will Apear Here'
                 self.root.ids.data4.text = ''
 
 ################## Temprature Sectctor ########################
@@ -1557,18 +1575,18 @@ class ConvertorApp(MDApp):
     def get_data5(self):
         try: 
             value_for_con = int(self.root.ids.data5.text)
-            con_sec = int(value_for_con) * 274.15
+            con_sec = round(int(value_for_con) * 274.15)
             self.root.ids.output5.text = str(con_sec) + '  ' + 'Kelvin'
             self.root.ids.data5.helper_text = ''
         except ValueError:
             try:
                 value_for_con = float(self.root.ids.data5.text)
-                con_sec = int(value_for_con) * 274.15
+                con_sec = round(int(value_for_con) * 274.15)
                 self.root.ids.output5.text = str(con_sec) + '  ' + 'Kelvin'
                 self.root.ids.data5.helper_text = ''
             except ValueError:
                 self.root.ids.data5.helper_text = 'Enter Number please'
-                self.root.ids.output5.text =  ''
+                self.root.ids.output5.text =  'Answer Will Apear Here'
                 self.root.ids.data5.text = ''
         
 ################## Energy Sectctor ########################
@@ -1587,7 +1605,7 @@ class ConvertorApp(MDApp):
                 self.root.ids.data6.helper_text = ''
             except ValueError:
                 self.root.ids.data6.helper_text = 'Enter Number please'
-                self.root.ids.output6.text =  ''
+                self.root.ids.output6.text =  'Answer Will Apear Here'
                 self.root.ids.data6.text = ''
         
 
@@ -1598,4 +1616,5 @@ class ConvertorApp(MDApp):
         return self.screen
 
 ConvertorApp().run()
+
 
